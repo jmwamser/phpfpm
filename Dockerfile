@@ -10,7 +10,8 @@ RUN yum -y install epel-release \
                    openssl-devel \
                    zlib-devel \
                    pcre-devel \
-                   yum-utils
+                   yum-utils \
+                   redhat-lsb-core
 RUN yum clean all 
 RUN wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 RUN rpm -Uvh remi-release-7*.rpm
