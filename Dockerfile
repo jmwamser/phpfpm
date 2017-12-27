@@ -61,6 +61,11 @@ RUN ln -sf /dev/stderr /var/log/nginx/error.log
 EXPOSE 80 443
 
 ADD container-files/script/* /tmp/script/
+COPY container-files/nginx.conf /etc/nginx/nginx.conf
+COPY container-files/vhost.conf:/etc/nginx/conf.d/vhost.conf
+COPY container-files/php.ini:/etc/php.ini
+COPY container-files/php-fpm.conf:/etc/php-fpm.conf
+COPY container-files/www.conf:/etc/php-fpm.d/www.conf
 RUN chmod +x /tmp/script/bootstrap.sh
 
 # put customized config and code files to /data
